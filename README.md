@@ -6,7 +6,7 @@ Local Docker setup for [MKDocks](https://www.mkdocs.org/), the project documenta
 MkDocs is a fast, simple and downright gorgeous static site generator that's geared towards building project documentation. Documentation source files are written in Markdown, and configured with a single YAML configuration file. Start by reading the [introductory tutorial](https://www.mkdocs.org/getting-started/), then check the [User Guide](https://www.mkdocs.org/user-guide/) for more information.
 
 - Python 3.12
-- MKDocs 1.6.1
+- MKDocs 1.6.1 at commit timestamp
 
 ## Getting Started
 This guide will assist with running your markdown project in docker.
