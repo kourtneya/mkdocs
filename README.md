@@ -5,9 +5,6 @@ Local Docker setup for [MKDocks](https://www.mkdocs.org/), the project documenta
 
 MkDocs is a fast, simple and downright gorgeous static site generator that's geared towards building project documentation. Documentation source files are written in Markdown, and configured with a single YAML configuration file. Start by reading the [introductory tutorial](https://www.mkdocs.org/getting-started/), then check the [User Guide](https://www.mkdocs.org/user-guide/) for more information.
 
-- Python 3.12
-- MKDocs 1.6.1 at commit timestamp
-
 ## Getting Started
 This guide will assist with running your markdown project in docker.
 
@@ -17,7 +14,7 @@ This guide will assist with running your markdown project in docker.
 
 ### Create markdown project 
 - [User Guide](https://www.mkdocs.org/user-guide/), skip installation step.
-- In the mkdocs.yaml, ensure you have the following configuration
+- In the `mkdocs.yaml`, ensure you have the following configuration
 ```
 dev_addr: "0.0.0.0:8000"
 ```
@@ -29,8 +26,8 @@ docker pull ghcr.io/kourtneya/mkdocs
 ```
 2. Run Docker image
 ```
-docker run -p {hostPort}:8000 -v {localProjectDir}:/home mkdocs:latest
+docker run --name mkdocks -p {hostPort}:8000 -v {localProjectDir}:/home ghcr.io/kourtneya/mkdocs:latest
 ```
-> In the run command mount the directory of the project on your local to the `home` directory of the container. Also, to run in detached mode just add `-d` (e.g docker run -d).
+> This run command mounts the local project directory to the `home` directory of the container where the mkdocs will serve.
 3. Navigate to MkDocs Project Url, `http://localhost:{hostPort}`
 4. As you make changes to the `docs` and `mkdocs.yaml` in the local directory, the running application will be watching for those changes.
